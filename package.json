@@ -3,8 +3,9 @@
     "version": "0.0.0",
     "license": "MIT",
     "scripts": {
-        "ng": "ng",
-        "start": "ng serve --proxy-config proxy.conf.json & node server.js",
+        "prestart": "yarn build",
+        "start": "node server.js",
+        "serve": "ng serve --proxy-config proxy.conf.json",
         "build": "ng build",
         "test": "ng test",
         "lint": "ng lint",

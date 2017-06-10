@@ -1,11 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
-import {
-    MdButtonModule,
-    MdCheckboxModule,
-    MdGridListModule,
-} from '@angular/material';
+import { FormsModule } from '@angular/forms';
+import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 
@@ -16,9 +13,8 @@ import { AppComponent } from './app.component';
     imports: [
         BrowserModule,
         HttpModule,
-        MdButtonModule,
-        MdCheckboxModule,
-        MdGridListModule,
+        FormsModule,
+        MaterialModule,
     ],
     providers: [],
     bootstrap: [AppComponent]

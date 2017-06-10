@@ -10,7 +10,7 @@ export class AppComponent {
 
     title = 'app';
 
-    buttonLabel = 'update';
+    buttonLabel = 'jsonApi';
 
     constructor(private http: Http) {
     }

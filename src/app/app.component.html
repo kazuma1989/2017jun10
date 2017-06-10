@@ -36,4 +36,11 @@
         </md-grid-tile>
 
     </md-grid-list>
+
+    <md-card>
+        <hotTable [data]="data" (after-change)="afterChange($event)" (after-on-cell-mouse-down)="afterOnCellMouseDown($event)" [colHeaders]="colHeaders"
+            [columns]="columns" [options]="options" [colWidths]="colWidths">
+        </hotTable>
+    </md-card>
+
 </md-sidenav-container>

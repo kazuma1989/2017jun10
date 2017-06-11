@@ -22,7 +22,11 @@ app.post('/api/edit/:mdFile', (req, resp) => {
     console.log(req.params.mdFile);
     console.log(req.body);
 
-    fs.writeFile(path.join(__dirname, 'dist', req.params.mdFile), req.body.content);
+    let filePath = path.join(__dirname, 'dist', req.params.mdFile);
+    let content = req.body.content;
+    fs.writeFile(filePath, content, (error) => {
+        console.warn(error);
+    });
 
     resp.send('POST!!');
 });

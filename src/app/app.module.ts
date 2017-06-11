@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
 
 import { HotTableModule } from 'ng2-handsontable';
+import { MarkdownModule } from 'angular2-markdown';
 
 import { AppComponent } from './app.component';
 import { Page1Component } from './page1/page1.component';
@@ -22,6 +23,11 @@ import { Page2Component } from './page2/page2.component';
         BrowserModule,
         RouterModule.forRoot([
           {
+            path: '',
+            redirectTo: 'page1',
+            pathMatch: 'full'
+          },
+          {
             path: 'page1',
             component: Page1Component
           },
@@ -34,6 +40,7 @@ import { Page2Component } from './page2/page2.component';
         FormsModule,
         MaterialModule,
         HotTableModule,
+        MarkdownModule.forRoot(),
     ],
     providers: [],
     bootstrap: [AppComponent]

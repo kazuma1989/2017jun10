@@ -32,7 +32,7 @@ import { Page2Component } from './page2/page2.component';
             component: Page1Component
           },
           {
-            path: 'page2',
+            path: 'page2/:mdFile',
             component: Page2Component
           },
         ]),

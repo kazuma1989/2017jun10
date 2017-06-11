@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-page2',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Page2Component implements OnInit {
 
-  constructor() { }
+  mdFile: string;
+
+  constructor(private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
+    this.route.params.subscribe((params: Params) => this.mdFile = `/assets/${params.mdFile}`);
   }
 
 }

@@ -1,0 +1,36 @@
+<div fxLayout="row">
+    <md-card fxFlex="50%">
+      <md-card-header>
+        <md-card-title>{{mdFile || 'no name'}}</md-card-title>
+      </md-card-header>
+
+      <md-card-content>
+        <md-input-container>
+            <textarea mdInput placeholder="Markdown"></textarea>
+        </md-input-container>
+      </md-card-content>
+
+      <md-card-actions>
+        <button md-raised-button [routerLink]="'/edit/' + mdFile">COMMIT</button>
+        <button md-raised-button [routerLink]="'/page2/' + mdFile">CANCEL</button>
+      </md-card-actions>
+    </md-card>
+
+    <md-card fxFlex="50%">
+      <md-card-header>
+        <md-card-title>{{mdFile || 'no name'}}</md-card-title>
+      </md-card-header>
+
+      <md-card-content>
+        <md-input-container>
+            <textarea mdInput placeholder="Markdown"></textarea>
+        </md-input-container>
+      </md-card-content>
+
+      <md-card-actions>
+        <button md-raised-button [routerLink]="'/edit/' + mdFile">COMMIT</button>
+        <button md-raised-button [routerLink]="'/page2/' + mdFile">CANCEL</button>
+      </md-card-actions>
+    </md-card>
+
+</div>

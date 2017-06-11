@@ -1,2 +1,13 @@
-<h1>{{mdFile}}</h1>
-<markdown [path]="mdFile"></markdown>
+<md-card>
+  <md-card-header>
+    <md-card-title>{{mdFile}}</md-card-title>
+  </md-card-header>
+
+  <md-card-content>
+    <markdown [path]="'/assets/' + mdFile"></markdown>
+  </md-card-content>
+
+  <md-card-actions>
+    <a md-raised-button [routerLink]="'/edit/' + mdFile">EDIT</a>
+  </md-card-actions>
+</md-card>

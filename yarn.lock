@@ -98,6 +98,10 @@
   dependencies:
     tslib "^1.7.1"
 
+"@angular/flex-layout@^2.0.0-beta.8":
+  version "2.0.0-beta.8"
+  resolved "https://registry.yarnpkg.com/@angular/flex-layout/-/flex-layout-2.0.0-beta.8.tgz#b9cf57865a93ca158fe56d850952423f248d103b"
+
 "@angular/forms@^4.0.0":
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-4.2.1.tgz#ad172cfd3070743b2a7a8161d2c75ac7f5b61f62"

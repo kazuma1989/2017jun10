@@ -14,7 +14,7 @@ export class Page2Component implements OnInit {
   }
 
   ngOnInit() {
-    this.route.params.subscribe((params: Params) => this.mdFile = `/assets/${params.mdFile}`);
+    this.route.params.subscribe((params: Params) => this.mdFile = params.mdFile);
   }
 
 }

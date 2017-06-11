@@ -1,36 +1,35 @@
 <div fxLayout="row">
     <md-card fxFlex="50%">
-      <md-card-header>
-        <md-card-title>{{mdFile || 'no name'}}</md-card-title>
-      </md-card-header>
+        <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+            <md-card-header>
+                <md-card-title>
+                    <md-input-container>
+                        <input type="text" mdInput placeholder="file name" [(ngModel)]="mdFile" name="mdFile" required>
+                    </md-input-container>
+                </md-card-title>
+            </md-card-header>
 
-      <md-card-content>
-        <md-input-container>
-            <textarea mdInput placeholder="Markdown"></textarea>
-        </md-input-container>
-      </md-card-content>
+            <md-card-content>
+                <md-input-container>
+                    <textarea mdInput placeholder="Markdown" [(ngModel)]="content" name="content"></textarea>
+                </md-input-container>
+            </md-card-content>
 
-      <md-card-actions>
-        <button md-raised-button [routerLink]="'/edit/' + mdFile">COMMIT</button>
-        <button md-raised-button [routerLink]="'/page2/' + mdFile">CANCEL</button>
-      </md-card-actions>
+            <md-card-actions>
+                <button md-raised-button type="submit" [disabled]="!heroForm.form.valid">COMMIT</button>
+                <button md-raised-button [routerLink]="'/page2/' + mdFile">CANCEL</button>
+            </md-card-actions>
+        </form>
     </md-card>
 
     <md-card fxFlex="50%">
-      <md-card-header>
-        <md-card-title>{{mdFile || 'no name'}}</md-card-title>
-      </md-card-header>
+        <md-card-header>
+            <md-card-title>Preview</md-card-title>
+        </md-card-header>
 
-      <md-card-content>
-        <md-input-container>
-            <textarea mdInput placeholder="Markdown"></textarea>
-        </md-input-container>
-      </md-card-content>
-
-      <md-card-actions>
-        <button md-raised-button [routerLink]="'/edit/' + mdFile">COMMIT</button>
-        <button md-raised-button [routerLink]="'/page2/' + mdFile">CANCEL</button>
-      </md-card-actions>
+        <md-card-content>
+            <markdown [data]="content"></markdown>
+        </md-card-content>
     </md-card>
 
 </div>

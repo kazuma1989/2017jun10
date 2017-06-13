@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { Page1Component } from './page1/page1.component';
 import { Page2Component } from './page2/page2.component';
 import { MdWriterComponent } from './md-writer/md-writer.component';
+import { ExcelComponent } from './excel/excel.component';
 
 
 @NgModule({
@@ -21,29 +22,34 @@ import { MdWriterComponent } from './md-writer/md-writer.component';
         AppComponent,
         Page1Component,
         Page2Component,
-        MdWriterComponent
+        MdWriterComponent,
+        ExcelComponent
     ],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
         RouterModule.forRoot([
-          {
-            path: '',
-            redirectTo: 'page1',
-            pathMatch: 'full'
-          },
-          {
-            path: 'page1',
-            component: Page1Component
-          },
-          {
-            path: 'page2/:mdFile',
-            component: Page2Component
-          },
-          {
-            path: 'edit/:mdFile',
-            component: MdWriterComponent
-          },
+            {
+                path: '',
+                redirectTo: 'page1',
+                pathMatch: 'full'
+            },
+            {
+                path: 'page1',
+                component: Page1Component
+            },
+            {
+                path: 'page2/:mdFile',
+                component: Page2Component
+            },
+            {
+                path: 'edit/:mdFile',
+                component: MdWriterComponent
+            },
+            {
+                path: 'excel',
+                component: ExcelComponent
+            },
         ]),
         HttpModule,
         FormsModule,

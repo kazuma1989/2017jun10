@@ -5,6 +5,7 @@ const path = require('path');
 
 const app = express();
 
+app.use('/data', express.static(__dirname + '/data'));
 app.use(express.static('dist'));
 
 app.get('/api/login', (req, resp) => {
@@ -22,7 +23,7 @@ app.post('/api/edit/:mdFile', (req, resp) => {
     console.log(req.params.mdFile);
     console.log(req.body);
 
-    let filePath = path.join(__dirname, 'dist', req.params.mdFile);
+    let filePath = path.join(__dirname, 'data', req.params.mdFile);
     let content = req.body.content;
     fs.writeFile(filePath, content, (error) => {
         console.warn(error);

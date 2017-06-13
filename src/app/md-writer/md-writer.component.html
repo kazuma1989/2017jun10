@@ -1,6 +1,6 @@
 <div fxLayout="row">
     <md-card fxFlex="50%">
-        <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+        <form (ngSubmit)="onSubmit()" #mdForm="ngForm">
             <md-card-header>
                 <md-card-title>
                     <md-input-container>
@@ -16,8 +16,8 @@
             </md-card-content>
 
             <md-card-actions>
-                <button md-raised-button type="submit" [disabled]="!heroForm.form.valid">COMMIT</button>
-                <button md-raised-button [routerLink]="'/page2/' + mdFile">CANCEL</button>
+                <button md-raised-button type="submit" [disabled]="!mdForm.form.valid">SAVE</button>
+                <button md-raised-button [routerLink]="['/page2/', mdFile]">CANCEL</button>
             </md-card-actions>
         </form>
     </md-card>

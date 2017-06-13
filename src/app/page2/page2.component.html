@@ -1,13 +1,17 @@
 <md-card>
-  <md-card-header>
-    <md-card-title>{{mdFile}}</md-card-title>
-  </md-card-header>
+    <md-card-header>
+        <md-card-title>{{mdFile}}</md-card-title>
+    </md-card-header>
 
-  <md-card-content>
-    <markdown [path]="'/assets/' + mdFile"></markdown>
-  </md-card-content>
+    <md-card-content>
+        <markdown [path]="'/data/' + mdFile"></markdown>
+    </md-card-content>
 
-  <md-card-actions>
-    <a md-raised-button [routerLink]="'/edit/' + mdFile">EDIT</a>
-  </md-card-actions>
+    <md-card-actions>
+        <a md-raised-button [routerLink]="['/edit', mdFile]">EDIT</a>
+        <md-input-container>
+            <input mdInput type="text" #text placeholder="Another file name">
+        </md-input-container>
+        <a md-raised-button [routerLink]="['/page2', text.value]">{{text.value}}</a>
+    </md-card-actions>
 </md-card>

@@ -8,10 +8,15 @@
     </md-card-content>
 
     <md-card-actions>
-        <a md-raised-button [routerLink]="['/edit', mdFile]">EDIT</a>
-        <md-input-container>
-            <input mdInput type="text" #text placeholder="Another file name">
-        </md-input-container>
-        <a md-raised-button [routerLink]="['/page2', text.value]">{{text.value}}</a>
+        <div fxFlex="50%" fxLayout="row" fxLayoutAlign="space-between center">
+            <a md-raised-button [routerLink]="['/edit', mdFile]" color="accent">EDIT</a>
+
+            <div>
+                <md-input-container>
+                    <input mdInput type="text" #text placeholder="Another file name">
+                </md-input-container>
+                <a md-raised-button [routerLink]="['/page2', text.value]">GO</a>
+            </div>
+        </div>
     </md-card-actions>
 </md-card>

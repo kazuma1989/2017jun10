@@ -18,10 +18,7 @@ export class Page2Component implements OnInit {
         // snapshot は、別コンポーネント間遷移でないと更新されない
         console.debug('ngOnInit', this.route.snapshot.params.mdFile);
 
-        this.route.params.do((params: Params) => {
-            console.debug(params);
-            return '';
-        }).subscribe((params: Params) => {
+        this.route.params.subscribe((params: Params) => {
             // subscribe したほうは、同じコンポーネント間であっても、遷移のたびに毎回呼ばれる
             console.debug(params.mdFile);
 

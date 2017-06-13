@@ -1,25 +1,25 @@
-<div fxLayout="row">
+<form (ngSubmit)="onSubmit()" #mdForm="ngForm" fxLayout="row">
     <md-card fxFlex="50%">
-        <form (ngSubmit)="onSubmit()" #mdForm="ngForm">
-            <md-card-header>
-                <md-card-title>
-                    <md-input-container>
-                        <input type="text" mdInput placeholder="file name" [(ngModel)]="mdFile" name="mdFile" required>
-                    </md-input-container>
-                </md-card-title>
-            </md-card-header>
+        <md-card-header>
+            <md-card-title>Editing</md-card-title>
+        </md-card-header>
 
-            <md-card-content>
-                <md-input-container>
-                    <textarea mdInput placeholder="Markdown" [(ngModel)]="content" name="content"></textarea>
-                </md-input-container>
-            </md-card-content>
+        <md-card-content fxLayout="column">
+            <md-input-container>
+                <textarea mdInput placeholder="Markdown" [(ngModel)]="content" name="content" rows="20"></textarea>
+            </md-input-container>
+        </md-card-content>
 
-            <md-card-actions>
-                <button md-raised-button type="submit" [disabled]="!mdForm.form.valid">SAVE</button>
+        <md-card-actions fxLayout="row" fxLayoutAlign="space-between center">
+            <div>
+                <button md-raised-button type="submit" [disabled]="!mdForm.form.valid" color="primary">SAVE</button>
                 <button md-raised-button [routerLink]="['/page2/', mdFile]">CANCEL</button>
-            </md-card-actions>
-        </form>
+            </div>
+
+            <md-input-container>
+                <input type="text" mdInput placeholder="Save as" [(ngModel)]="mdFile" name="mdFile" required>
+            </md-input-container>
+        </md-card-actions>
     </md-card>
 
     <md-card fxFlex="50%">
@@ -31,5 +31,4 @@
             <markdown [data]="content"></markdown>
         </md-card-content>
     </md-card>
-
-</div>
+</form>

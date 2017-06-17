@@ -4,7 +4,7 @@
     "license": "MIT",
     "scripts": {
         "serve": "ng serve --proxy-config proxy.conf.json --host 0.0.0.0 --disable-host-check",
-        "start": "node ./server/server.js",
+        "start": "node ./server.js",
         "prestart:dist": "yarn build",
         "start:dist": "yarn start",
         "build": "ng build",

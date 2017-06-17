@@ -15,6 +15,7 @@ import { Page1Component } from './page1/page1.component';
 import { Page2Component } from './page2/page2.component';
 import { MdWriterComponent } from './md-writer/md-writer.component';
 import { ExcelComponent } from './excel/excel.component';
+import { TopComponent } from './top/top.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ExcelComponent } from './excel/excel.component';
         Page1Component,
         Page2Component,
         MdWriterComponent,
-        ExcelComponent
+        ExcelComponent,
+        TopComponent
     ],
     imports: [
         BrowserModule,
@@ -31,8 +33,12 @@ import { ExcelComponent } from './excel/excel.component';
         RouterModule.forRoot([
             {
                 path: '',
-                redirectTo: 'page1',
+                redirectTo: 'top',
                 pathMatch: 'full'
+            },
+            {
+                path: 'top',
+                component: TopComponent
             },
             {
                 path: 'page1',

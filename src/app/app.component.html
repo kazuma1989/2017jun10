@@ -1,7 +1,11 @@
 <md-toolbar color="primary">
-    <a routerLink="/">Welcome to {{title}}!!</a>
-    <a md-raised-button routerLink="/page1">page1</a>
-    <a md-raised-button routerLink="/page2/test.md">page2</a>
+    <button md-button [mdMenuTriggerFor]="menu">Menu</button>
+    <md-menu #menu="mdMenu">
+        <a md-menu-item routerLink="/">Top</a>
+        <a md-menu-item routerLink="/page1">page1</a>
+        <a md-menu-item routerLink="/page2/test.md">page2</a>
+        <a md-menu-item routerLink="/excel">excel</a>
+    </md-menu>
 </md-toolbar>
 
 <div class="content">

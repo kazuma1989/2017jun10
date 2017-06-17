@@ -30,6 +30,9 @@ app.post('/api/edit/:mdFile', (req, resp) => {
     let filePath = path.join(__dirname, 'data', req.params.mdFile);
     let content = req.body.content;
     fs.writeFile(filePath, content, (error) => {
+        if (!error) {
+            return;
+        }
         console.warn(error);
     });
 

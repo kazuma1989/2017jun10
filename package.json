@@ -3,9 +3,10 @@
     "version": "0.0.0",
     "license": "MIT",
     "scripts": {
-        "prestart": "yarn build",
-        "start": "node server.js",
         "serve": "ng serve --proxy-config proxy.conf.json --host 0.0.0.0 --disable-host-check",
+        "start": "node ./server/server.js",
+        "prestart:dist": "yarn build",
+        "start:dist": "yarn start",
         "build": "ng build",
         "test": "ng test",
         "lint": "ng lint",

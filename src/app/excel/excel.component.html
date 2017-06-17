@@ -1,3 +1,15 @@
-<hotTable [data]="data" (after-change)="afterChange($event)" (after-on-cell-mouse-down)="afterOnCellMouseDown($event)" [colHeaders]="colHeaders"
-    [columns]="columns" [options]="options" [colWidths]="colWidths">
-</hotTable>
+<form (ngSubmit)="onSubmit()" #excelForm="ngForm" fxLayout="column">
+    <div fxLayout="row">
+        <div fxFlex="50%" fxLayout="row" fxLayoutAlign="space-between center">
+            <md-input-container>
+                <input type="text" mdInput placeholder="Save as" [(ngModel)]="excelFile" name="excelFile" required>
+            </md-input-container>
+
+            <button md-raised-button type="submit" [disabled]="!excelForm.form.valid" color="primary">SAVE</button>
+        </div>
+    </div>
+
+    <hotTable [data]="data" (after-change)="afterChange($event)" (after-on-cell-mouse-down)="afterOnCellMouseDown($event)" [colHeaders]="colHeaders"
+        [columns]="columns" [options]="options" [colWidths]="colWidths">
+    </hotTable>
+</form>
